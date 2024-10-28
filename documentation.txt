@@ -1,0 +1,7 @@
+blog urls:
+GET /api/blogs -> get all blogs
+POST /api/blogs -> post new blog
+
+user urls:
+POST /api/user/register -> register new user
+POST /api/user/login -> login user
