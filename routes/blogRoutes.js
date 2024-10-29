@@ -26,7 +26,7 @@ router.post("/", authenticateToken, async (req, res) => {
 // GET /blogs - Retrieve all blog posts
 router.get("/", async (req, res) => {
     try {
-        const blogs = await Blog.find().populate("author", "name email");
+        const blogs = await Blog.find().populate("author", "name");
         res.json(blogs);
     } catch (error) {
         res.status(500).json({ error: "Error fetching blog posts" });
