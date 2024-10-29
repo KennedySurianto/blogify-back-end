@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
         if (!isMatch) {
             return res.status(400).json({ error: "Invalid email or password" });
         }
-
+        
         // Create JWT token
         const token = jwt.sign(
             { userId: user._id },
@@ -50,7 +50,7 @@ router.post("/login", async (req, res) => {
             { expiresIn: "1h" }
         );
 
-        res.json({ message: "Login successful", token });
+        res.json({ message: "Login successful", token, userId: user._id });
     } catch (error) {
         res.status(500).json({ error: "Error logging in" });
     }
